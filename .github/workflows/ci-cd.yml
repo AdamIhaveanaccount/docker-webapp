@@ -27,20 +27,20 @@ jobs:
           docker push mantriesdocker/php-nginx-app:latest
 
       - name: 🚀 Deploya till server
-  uses: appleboy/ssh-action@v1.2.2
-  with:
-    host: ${{ secrets.AZURE_VM_IP }}
-    username: ${{ secrets.AZURE_VM_USER }}
-    key: ${{ secrets.AZURE_VM_SSH_KEY }}
-    script: |
-      cd /home/azureuser/docker-app || true
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.AZURE_VM_IP }}
+          username: ${{ secrets.AZURE_VM_USER }}
+          key: ${{ secrets.AZURE_VM_SSH_KEY }}
+          script: |
+            cd /home/azureuser/docker-app || true
 
-      # Hämta senaste image
-      sudo docker pull mantriesdocker/php-nginx-app:latest
+            # Hämta senaste image
+            sudo docker pull mantriesdocker/php-nginx-app:latest
 
-      # Stoppa och ta bort gammal container
-      sudo docker stop webapp || true
-      sudo docker rm webapp || true
+            # Stoppa och ta bort gammal container
+            sudo docker stop webapp || true
+            sudo docker rm webapp || true
 
-      # Starta ny container
-      sudo docker run -d --name webapp mantriesdocker/php-nginx-app:latest
+            # Starta ny container
+            sudo docker run -d --name webapp mantriesdocker/php-nginx-app:latest
