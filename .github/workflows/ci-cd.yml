@@ -43,5 +43,5 @@ jobs:
             sudo docker rm webapp || true
 
             # Starta ny container
-            sudo docker run -d --pull always -p 8000:8000 --name webapp mantriesdocker/php-nginx-app:latest
+            sudo docker run -d -p 8000:8000 --name webapp mantriesdocker/php-nginx-app:latest
 
