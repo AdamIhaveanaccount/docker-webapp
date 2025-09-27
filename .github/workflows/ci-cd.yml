@@ -20,14 +20,14 @@ jobs:
 
       - name: 🔨 Bygg Docker-image
         run: |
-          docker build -t 91maxore/php-nginx-app:latest .
+          docker build -t mantriesdocker/php-nginx-app:latest .
 
       - name: 📤 Pusha till Docker Hub
         run: |
-          docker push 91maxore/php-nginx-app:latest
+          docker push mantriesdocker/php-nginx-app:latest
 
       - name: 🚀 Deploya till server
-        uses: appleboy/ssh-action@v0.1.7
+        uses: appleboy/ssh-action@v0.1.2.2
         with:
           host: ${{ secrets.AZURE_VM_IP }}
           username: ${{ secrets.AZURE_VM_USER }}
