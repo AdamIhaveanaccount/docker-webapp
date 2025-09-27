@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docker Showcase – [Ditt Namn]</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      margin-top: .5rem;
+      color: #cbd5e1;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 3rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      margin-bottom: .75rem;
+    }
+
+    .card p {
+      margin: 0;
+      line-height: 1.5;
+      color: #e2e8f0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.4);
+      font-size: .9rem;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Docker Showcase</h1>
+    <p>av <strong>Pontus Kroon</strong></p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>⚓ Vad är Docker?</h2>
+      <p>Docker är en plattform för att köra applikationer i containrar. Det gör det enkelt att bygga, distribuera och köra mjukvara på ett konsekvent sätt oavsett miljö.</p>
+    </div>
+
+    <div class="card">
+      <h2>📦 Containers</h2>
+      <p>En container är som en liten låda med allt en app behöver – kod, bibliotek och miljö. Det gör att den fungerar likadant överallt.</p>
+    </div>
+
+    <div class="card">
+      <h2>🚀 Fördelar</h2>
+      <p>Snabbare utveckling, enklare skalning och bättre isolering mellan applikationer. Perfekt för både utveckling och produktion.</p>
+    </div>
+
+    <div class="card">
+      <h2>🔧 Nginx + Docker</h2>
+      <p>Denna sida serveras av en Docker-container med nginx som webbserver. Enkel, effektiv och bärbar.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 [Ditt Namn] – Powered by Docker & Nginx
+  </footer>
+</body>
+</html>
