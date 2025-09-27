@@ -40,6 +40,6 @@ jobs:
             echo "LETSENCRYPT_HOST=${{ secrets.LETSENCRYPT_HOST }}" >> .env
             echo "LETSENCRYPT_EMAIL=${{ secrets.LETSENCRYPT_EMAIL }}" >> .env
 
-            # Starta om containrarna, docker-compose läser nu variabler från .env-filen
+            # Starta om containrarna utan att specificera port
             sudo docker compose pull
             sudo docker compose up -d
