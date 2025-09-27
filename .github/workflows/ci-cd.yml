@@ -27,7 +27,7 @@ jobs:
           docker push mantriesdocker/php-nginx-app:latest
 
       - name: 🚀 Deploya till server
-        uses: appleboy/ssh-action@0.1.7
+        uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.AZURE_VM_IP }}
           username: ${{ secrets.AZURE_VM_USER }}
