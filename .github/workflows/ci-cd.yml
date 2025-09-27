@@ -33,13 +33,6 @@ jobs:
           username: ${{ secrets.AZURE_VM_USER }}
           key: ${{ secrets.AZURE_VM_SSH_KEY }}
           script: |
-            cd /home/azureuser/nginx-reverse-proxy
-
-            # Skapa/skriv över .env-fil med hemliga variabler
-            echo "VIRTUAL_HOST=${{ secrets.VIRTUAL_HOST }}" > .env
-            echo "LETSENCRYPT_HOST=${{ secrets.LETSENCRYPT_HOST }}" >> .env
-            echo "LETSENCRYPT_EMAIL=${{ secrets.LETSENCRYPT_EMAIL }}" >> .env
-
-            # Starta om containrarna utan att specificera port
-            sudo docker compose pull
-            sudo docker compose up -d
+            # Stoppa och ta bort eventuell tidigare container
+            sudo docker stop webapp || true
+            sudo docker rm webapp || true
