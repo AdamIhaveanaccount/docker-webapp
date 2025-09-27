@@ -34,4 +34,4 @@ jobs:
           docker pull mantriesdocker/docker-webapp:latest
           docker stop webapp || true
           docker rm webapp || true
-          docker run -d -p 80:80 --name webapp mantriesdocker/docker-webapp:latest
+          docker run -d -p 8000:8000 --name webapp mantriesdocker/docker-webapp:latest
